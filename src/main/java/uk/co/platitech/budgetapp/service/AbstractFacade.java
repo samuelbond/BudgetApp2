@@ -8,6 +8,9 @@ package uk.co.platitech.budgetapp.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import uk.co.platitech.budgetapp.BankAccount;
+import uk.co.platitech.budgetapp.Users;
 
 /**
  *
@@ -59,6 +62,13 @@ public abstract class AbstractFacade<T> {
         cq.select(getEntityManager().getCriteriaBuilder().count(rt));
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
+    }
+    
+    public List<BankAccount> getUserAccounts(Users userId)
+    {
+        Query q = getEntityManager().createNamedQuery("BankAccount.findUserAccount").setParameter("userId", userId);
+        List <BankAccount> acc = q.getResultList();
+        return acc;
     }
     
 }

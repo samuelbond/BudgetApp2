@@ -19,6 +19,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import uk.co.platitech.budgetapp.BankAccount;
+import uk.co.platitech.budgetapp.Users;
 
 /**
  *
@@ -35,10 +36,11 @@ public class BankAccountFacadeREST extends AbstractFacade<BankAccount> {
     }
 
     @POST
-    @Override
     @Consumes({"application/xml", "application/json"})
-    public void create(BankAccount entity) {
-        super.create(entity);
+    @Produces({"application/json"})
+    public BankAccount createAcc(BankAccount entity) {
+        //super.create(entity);
+        return entity;
     }
 
     @PUT
@@ -61,6 +63,13 @@ public class BankAccountFacadeREST extends AbstractFacade<BankAccount> {
         return super.find(id);
     }
 
+    @GET
+    @Path("/getaccount/{id}")
+    @Produces({"application/json"})
+    public List<BankAccount> getAccount(@PathParam("id") String id) {
+        return super.getUserAccounts(new Users(id));
+    }
+    
     @GET
     @Override
     @Produces({"application/json"})
