@@ -1,0 +1,17 @@
+uk/co/platitech/budgetapp/service/UsersFacadeREST.class
+uk/co/platitech/budgetapp/Users.class
+uk/co/platitech/budgetapp/BankAccount.class
+uk/co/platitech/budgetapp/AccountBalance.class
+uk/co/platitech/budgetapp/Users_.class
+uk/co/platitech/budgetapp/service/TransactionCategoryFacadeREST.class
+uk/co/platitech/budgetapp/AccountTransactions_.class
+uk/co/platitech/budgetapp/AccountBalance_.class
+uk/co/platitech/budgetapp/service/AccountTransactionsFacadeREST.class
+uk/co/platitech/budgetapp/TransactionCategory.class
+uk/co/platitech/budgetapp/TransactionCategory_.class
+uk/co/platitech/budgetapp/service/AccountBalanceFacadeREST.class
+uk/co/platitech/budgetapp/service/BankAccountFacadeREST.class
+uk/co/platitech/budgetapp/service/ApplicationConfig.class
+uk/co/platitech/budgetapp/service/AbstractFacade.class
+uk/co/platitech/budgetapp/BankAccount_.class
+uk/co/platitech/budgetapp/AccountTransactions.class
