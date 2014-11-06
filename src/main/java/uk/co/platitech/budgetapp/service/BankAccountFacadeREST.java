@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -36,9 +37,10 @@ public class BankAccountFacadeREST extends AbstractFacade<BankAccount> {
     }
 
     @POST
-    @Consumes({"application/xml", "application/json"})
+    @Consumes({"application/json"})
+    //@Consumes("application/x-www-form-urlencoded")
     @Produces({"application/json"})
-    public BankAccount createAcc(BankAccount entity) {
+    public BankAccount createAcc(BankAccount entity){//@FormParam("userId") String data) {
         //super.create(entity);
         return entity;
     }

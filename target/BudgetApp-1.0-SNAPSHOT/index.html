@@ -3,10 +3,12 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
+
         <h1>Create Bank Account!</h1>
-        <form method="post" action="webresources/uk.co.platitech.budgetapp.bankaccount">
+        <form id="myform" method="post" action="webresources/uk.co.platitech.budgetapp.bankaccount">
             <label>Bank Account Name: </label>
             <input type="text" name="accountName"  />
             <label>Account Number</label>
@@ -16,5 +18,40 @@
             <br />
             <input type="submit" value="Create Account" />
         </form>
+
+        <script>
+            jQuery(function($) {
+                $("#myform").submit(function(e) {
+                    e = e || event;
+                    e.preventDefault();
+                    // var formxml = json2xml.convert(formjson);
+                    var jSon = {};
+                    $.each($('#myform input[type=text]'), function(k, v) {
+                        jSon[$(this).attr('name')] = $(this).val();
+                    });
+//                    $.post("webresources/uk.co.platitech.budgetapp.bankaccount",  JSON.stringify(jSon), function(data) {
+//                        // callback logic
+//                        console.log(data);
+//                    });
+                    $.ajax
+                            ({
+                                type: "POST",
+                                //the url where you want to sent the userName and password to
+                                url: 'webresources/uk.co.platitech.budgetapp.bankaccount',
+                                dataType: 'json',
+                                async: false,
+                                contentType: "application/json",
+                                //json object to sent to the authentication url
+                                data: JSON.stringify(jSon),
+                                success: function() {
+
+                                    alert("Thanks!");
+                                }
+                            })
+                    return false;
+                });
+
+            });
+        </script>
     </body>
 </html>
