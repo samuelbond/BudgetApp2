@@ -32,6 +32,8 @@ public class ApplicationConfig extends Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(uk.co.platitech.budgetapp.service.AccountBalanceFacadeREST.class);
         resources.add(uk.co.platitech.budgetapp.service.AccountTransactionsFacadeREST.class);
+        resources.add(uk.co.platitech.budgetapp.service.AppRegister.class);
+        resources.add(uk.co.platitech.budgetapp.service.AppsFacadeREST.class);
         resources.add(uk.co.platitech.budgetapp.service.BankAccountFacadeREST.class);
         resources.add(uk.co.platitech.budgetapp.service.TransactionCategoryFacadeREST.class);
         resources.add(uk.co.platitech.budgetapp.service.UsersFacadeREST.class);
